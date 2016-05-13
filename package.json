@@ -1,0 +1,23 @@
+{
+  "name": "crud",
+  "version": "1.0.0",
+  "description": "crud restfull",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "js"
+  ],
+  "author": "jose ferreira da silva",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.6.7",
+    "ejs": "^0.8.8",
+    "express": "^4.8.8",
+    "express-load": "^1.1.15",
+    "method-override": "^2.1.3",
+    "mongodb": "^1.4.40",
+    "mongoose": "^4.4.11"
+  }
+}

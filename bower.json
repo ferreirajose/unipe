@@ -1,0 +1,28 @@
+{
+    "name": "crud",
+    "description": "crud restfull",
+    "main": "index.js",
+    "authors": [
+    "jose ferreira da silva"
+  ],
+    "license": "ISC",
+    "keywords": [
+    "js"
+  ],
+    "moduleType": [],
+    "homepage": "",
+    "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/vendor",
+    "test",
+    "tests"
+  ],
+    "dependencies": {
+        "angular": "1.4",
+        "angular-route": "1.4",
+        "angular-resource": "1.4",
+        "angular-filepicker": "^1.1.4"
+    }
+}
