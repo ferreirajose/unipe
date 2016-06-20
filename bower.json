@@ -1,17 +1,17 @@
 {
-    "name": "crud",
-    "description": "crud restfull",
-    "main": "index.js",
-    "authors": [
+  "name": "crud",
+  "description": "crud restfull",
+  "main": "index.js",
+  "authors": [
     "jose ferreira da silva"
   ],
-    "license": "ISC",
-    "keywords": [
+  "license": "ISC",
+  "keywords": [
     "js"
   ],
-    "moduleType": [],
-    "homepage": "",
-    "ignore": [
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
     "**/.*",
     "node_modules",
     "bower_components",
@@ -19,10 +19,12 @@
     "test",
     "tests"
   ],
-    "dependencies": {
-        "angular": "1.4",
-        "angular-route": "1.4",
-        "angular-resource": "1.4",
-        "angular-filepicker": "^1.1.4"
-    }
+  "dependencies": {
+    "angular": "1.4",
+    "angular-route": "1.4",
+    "angular-resource": "1.4",
+    "angular-filepicker": "^1.1.4",
+    "jquery": "2.0.3",
+    "font-awesome": "fontawesome#^4.6.3"
+  }
 }

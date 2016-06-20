@@ -2,7 +2,7 @@
     <div class="col-md-12">
         <div class="card">
             <div class="header">
-                <h4 class="title">Add User {{message}}</h4>
+				<h4 class="title">Cadastra Empresa</h4>
             </div>
             <div class="content">
                 <form name="contatoForm">
@@ -10,32 +10,35 @@
                         <div class="col-md-5">
                             <div class="form-group">
                                 <label>Empresa</label>
-                                <input type="text" class="form-control" ng-required="true" ng-model="contato.empresa" placeholder="Company">
+								<input type="text" class="form-control" ng-required="true" ng-model="contato.empresa" placeholder="Nome da Empresa">
                             </div>
                         </div>
+						<div class="col-md-4">
+							<div class="form-group">
+								<label for="exampleInputEmail1">E-mail</label>
+								<input type="email" class="form-control" ng-model="contato.email" placeholder="E-mail">
+							</div>
+						</div>
                         <div class="col-md-3">
                             <div class="form-group">
-                                <label>Username</label>
-                                <input type="text" class="form-control" ng-required="true" ng-model="contato.username" placeholder="Username">
+                                <label>Telefone</label>
+                                <input type="tel" class="form-control" ng-required="true" ng-model="contato.telefone" placeholder="Telefone">
                             </div>
                         </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">Email address</label>
-                                <input type="email" class="form-control" ng-model="contato.email" placeholder="Email">
-                            </div>
-                        </div>
+                        
                     </div>
 
                     <div class="row">
-                        <div class="col-md-6">
+<!--
+                        <div class="col-md-12">
                             <div class="form-group">
                                 <label> Name</label>
                                 <input type="text" class="form-control" ng-model="contato.nome" placeholder="First Name">
                             </div>
                         </div>
+-->
 
-                        <div class="col-md-6">
+                        <div class="col-md-12">
                             <div class="form-group">
                                <label style="visibility: hidden;"> Upload Fotos</label>
                                 <input filepicker 
@@ -53,7 +56,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label>Zip Code</label>
+                                <label>CEP</label>
                                 <input type="text" id="zip" class="form-control" ng-blur="autoCompletAddress(contato.cep)" ng-model="contato.cep" placeholder="CEP 58090-790">
                             </div>
                         </div>
@@ -68,13 +71,13 @@
                     <div class="row">
                         <div class="col-md-4">
                             <div class="form-group">
-                                <label>Province/State</label>
+                                <label>Estado</label>
                                 <input type="text" id="estado" class="form-control" ng-model="contato.uf" placeholder="Paraiba">
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
-                                <label>City</label>
+                                <label>Cidade</label>
                                 <input type="text" id="cidade" class="form-control" ng-model="contato.cidade" placeholder="João Pessoa">
                             </div>
                         </div>
@@ -89,7 +92,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label>About Me</label>
+                                <label>Sobre</label>
                                 <textarea rows="5" class="form-control" ng-model="contato.sobre" placeholder="Here can be your description"></textarea>
                             </div>
                         </div>
@@ -110,19 +113,18 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="header">
-                    <h4 class="title">Listar Contatos</h4>
+                    <h4 class="title">Listar Das Empresas</h4>
                     <div class="form-group">
-
                         <input type="text" class="form-control" ng-model="search" placeholder="Buscar contato">
                     </div>
                 </div>
                 <div class="content table-responsive table-full-width">
                     <table class="table table-hover">
                         <thead>
-                            <th>Nome</th>
+<!--                            <th>Nome</th>-->
                             <th>Foto</th>
                             <th>Empresa</th>
-                            <th>Username</th>
+                            <th>Telefone</th>
                             <th>Rua</th>
                             <th>Bairro</th>
                             <th>Estado</th>
@@ -133,20 +135,20 @@
                         <tbody>
 
                             <tr ng-repeat="contato in contatos | filter:search">
-                                <td>{{contato.nome}}</td>
+<!--                                <td>{{contato.nome}}</td>-->
                                 <td><img ng-src='{{contato.foto}}' width="32" /></td>
                                 <td>{{contato.empresa}}</td>
-                                <td>{{contato.username}}</td>
+                                <td>{{contato.telefone}}</td>
                                 <td>{{contato.rua}}</td>
                                 <td>{{contato.bairro}}</td>
                                 <td>{{contato.uf}}</td>
                                 <td>{{contato.cidade}}</td>
                                 <td>{{contato.cep}}</td>
                                 <td class="td-actions text-center">
-                                    <a rel="tooltip" ng-href="#update/{{contato._id}}" title="" class="btn btn-info btn-simple btn-xs" data-original-title="Edit Task">
+									<a rel="tooltip" ng-href="#update/{{contato._id}}" title="Editar" class="btn btn-info btn-simple btn-xs" data-original-title="Editar">
                                         <i class="fa fa-edit"></i>
                                     </a>
-                                    <button type="button" ng-click="deleteCustomer(contato._id)" rel="tooltip" title="" class="btn btn-danger btn-simple btn-xs" data-original-title="Remove">
+									<button type="button" ng-click="deleteCustomer(contato._id)" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs" data-original-title="Remove">
                                         <i class="fa fa-times"></i>
                                     </button>
                                 </td>

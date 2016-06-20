@@ -1,36 +1,6 @@
-//var contatos = [
-//    {
-//        _id: "ObjectId(560775b6f6f0bf241ce3e561)",
-//        empresa: 'globo',
-//        username: "zezinho",
-//        email: "zezinho@unipe.com",
-//        nome: "jose",
-//        cep: "58090790",
-//        rua: "irandir costa",
-//        uf: "pb",
-//        cidade: "joão pessoa",
-//        bairro: "alto do mateus",
-//        sobre: "re"
-//    },
-//    {
-//        _id: 2,
-//        empresa: 'ufpb',
-//        username: "debora",
-//        email: "zezinho@unipe.com",
-//        nome: "debora",
-//        cep: "58090790",
-//        rua: "irandir costa",
-//        uf: "pb",
-//        cidade: "joão pessoa",
-//        bairro: "jose americo",
-//        sobre: "re"
-//
-//    }
-//];
-//var ID_CONTATO_INC = 3;
 
 module.exports = function (app) {
-    var Contato = app.models.contato;
+	var Contato = app.models.modelContato;
     var controller = {};
 
     controller.listaTodosContatos = function (req, res) {

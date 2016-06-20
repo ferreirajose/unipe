@@ -13,8 +13,8 @@ module.exports = function () {
             type: String,
             required: true
         },
-        username: {
-            type: String,
+        telefone: {
+			type: Number,
             required: true
         },
         email: {
@@ -23,10 +23,6 @@ module.exports = function () {
             index: {
                 unique: true
             }
-        },
-        nome: {
-            type: String,
-            required: true
         },
         foto: {
             type: String,

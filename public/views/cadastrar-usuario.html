@@ -1,0 +1,13 @@
+<div class="wrapper">
+	<p class="alert-danger">{{msn}}</p>
+	<form class="form-signin" ng-submit="cadUse()">       
+		<h2 class="form-signin-heading">Cadastrar novo Usuario</h2>
+		<input type="text" class="form-control" placeholder="Informe seu Login" ng-model="user.login" required="" />
+		<input type="text" class="form-control" placeholder="Informe seu Email" ng-model="user.email" required="" />
+		<input type="password" class="form-control" placeholder="Informe sua Senha" ng-model="user.senha" required=""/>      
+		<label class="checkbox">
+			<a href="#/login">Login</a>
+		</label>
+		<button class="btn btn-lg btn-primary btn-block" type="submit">Cadastrar</button>   
+	</form>
+</div>

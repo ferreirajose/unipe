@@ -13,4 +13,5 @@ module.exports = function(app){
         .get(controller.listaByIdContato)
         .put(controller.updateContato)
         .delete(controller.removeContato);
+    
 }

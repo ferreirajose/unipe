@@ -1,0 +1,14 @@
+<div class="wrapper">
+	<p class="alert-danger">{{msn}}</p>
+	<form class="form-signin" ng-submit="logar()">       
+		<h2 class="form-signin-heading">Login</h2>
+		<input type="text" class="form-control" name="username" placeholder="Informe seu Login" ng-model="usuario.login" required="" autofocus="" />
+		<input type="password" class="form-control" name="password" placeholder="Informe sua Senha" ng-model="usuario.senha" required=""/>      
+
+		<label class="checkbox">
+			<a href="#/usuario/add">Cadastrar</a>
+		</label>
+
+		<button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>   
+	</form>
+</div>

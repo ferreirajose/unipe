@@ -125,8 +125,8 @@
                                         <li><a href="#">Separated link</a></li>
                                     </ul>
                                 </li>
-                                <li>
-                                    <a href="#">Log out</a>
+								<li ng-controller="contatosController">
+                                    <a href="#" ng-click="sair()">Log out</a>
                                 </li>
                             </ul>
                         </div>
@@ -190,8 +190,10 @@
     
     <script src="js/main.js"></script>
     <script src="js/controllers/contatosController.js"></script>
-    <script src="js/services/contatoService.js"></script> 
-    <script src="js/directives/modalDirective.js"></script>    
+	<script src="js/controllers/loginController.js"></script>
+	<script src="js/controllers/usuarioController.js"></script>
+	<script src="js/services/contatoService.js"></script>
+	<script src="js/services/tokenInterceptorService.js"></script>  
  
 
 </html>

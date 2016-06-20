@@ -1,8 +1,7 @@
-angular.module('unipe').controller("contatosController", function ($scope, $routeParams, $http, contatoFactory) {
+angular.module('unipe').controller("contatosController", function ($scope, $routeParams, $http, $window, $location, contatoFactory) {
 
 
     $scope.contatos = [];
-    $scope.files = [];
 
     type = ['success', 'danger'];
 
@@ -61,7 +60,16 @@ angular.module('unipe').controller("contatosController", function ($scope, $rout
             }
         });
     }
+	
+	
 
+	$scope.sair = function(){       
+		console.log(1);
+		delete $window.sessionStorage.token;
+		$location.path('/login');
+		console.log('Token Retirado');
+	};
+	
     $scope.onSuccess = function (Blob){
         console.log(Blob);
         $scope.contatos.push(Blob);  
