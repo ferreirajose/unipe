@@ -1,4 +1,4 @@
-angular.module('unipe').controller("contatosController", function ($scope, $routeParams, $http, $window, $location, contatoFactory) {
+angular.module('unipe').controller("contatosController", function ($scope, $routeParams, $http, $window, $location, $rootScope, contatoFactory) {
 
 
     $scope.contatos = [];
@@ -10,11 +10,11 @@ angular.module('unipe').controller("contatosController", function ($scope, $rout
     $scope.autoCompletAddress = function (cep) {
         var headers = {
             'Access-Control-Allow-Headers': 'Content-Type',
-            'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+            'Access-Control-Allow-Methods': 'GET, POST',
             'Access-Control-Allow-Origin': '*'
         }
 
-        $http.get("https://viacep.com.br/ws/" + cep + "/json/").success(function (data) {
+        $http.get("https://viacep.com.br/ws/" + cep + "/json/", headers).success(function (data) {
 
             $scope.contato.rua = data.logradouro;
             $scope.contato.uf = data.uf;
@@ -60,25 +60,25 @@ angular.module('unipe').controller("contatosController", function ($scope, $rout
             }
         });
     }
-	
-	
 
-	$scope.sair = function(){       
-		console.log(1);
-		delete $window.sessionStorage.token;
-		$location.path('/login');
-		console.log('Token Retirado');
-	};
-	
-    $scope.onSuccess = function (Blob){
-        console.log(Blob);
-        $scope.contatos.push(Blob);  
-        $scope.$apply();      
+
+
+    $scope.sair = function () {
+        console.log(1);
+        delete $window.sessionStorage.token;
+        $location.path('/login');
+        console.log('Token Retirado');
     };
-    
-    
+
+    $scope.onSuccess = function (Blob) {
+        console.log(Blob);
+        $scope.contatos.push(Blob);
+        $scope.$apply();
+    };
+
+
     $scope.insertCustomer = function (contato) {
-        console.log(contato)        
+        console.log(contato)
         contatoFactory.insertCustomer(contato).then(function (response) {
             // atualiza a lista de contatos
             getCustomers();
@@ -127,9 +127,14 @@ angular.module('unipe').controller("contatosController", function ($scope, $rout
         });
     }
 
+
     $scope.init = function () {
         getByIdContato();
-        getCustomers();
+        if ($window.sessionStorage.token != undefined) {
+            getCustomers();
+        }else{
+            $location.path('/login');
+        }
     }
 
     $scope.init();
